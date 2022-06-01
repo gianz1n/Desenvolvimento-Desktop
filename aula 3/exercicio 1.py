@@ -10,6 +10,8 @@ def calcular():
         Altura = float(entrarAltura.get())
         IMC = Peso / (Altura * Altura)
         resultado['text'] = IMC
+    else:
+        resultado['text'] = 'Valor Inválido'
 
       
 #config janela
@@ -18,6 +20,7 @@ janela.title('IMC calculator')
 janela.geometry('400x115')
 janela.minsize(width=400, height=150)
 janela.maxsize(width=600, height=450)
+janela.bind('<Return>', lambda event: calcular())
 
 
 #widgets
